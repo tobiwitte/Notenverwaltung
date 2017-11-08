@@ -1,23 +1,23 @@
 /**
 *
 */
-public class Verwaltung 
+public class Verwaltung
 {
   /* Attribute */
-	private Fach[] fach;
+	private Fach[] faecher;
 	private int anzahlFaecher;
   /* Methoden */
   /** @param erstelle neues Fach
 */
   public void legeFachAn(String  name){
-      fach[anzahlFaecher] = new Fach(name);
+      faecher[anzahlFaecher] = new Fach(name);
   }
 
   /** @return liefert Namen der Faecher zurück
 */
   public void gibFaecherNamen(){
-      for(int i=0; i<fach.length; i++){
-          String name = fach[i].gibName();
+      for(int i=0; i<faecher.length; i++){
+          String name = faecher[i].gibName();
           if(name != null){
               System.out.println(name);
             }
