@@ -4,8 +4,8 @@
 public class Verwaltung
 {
   /* Attribute */
-	private Fach[] faecher;
-	private int anzahlFaecher;
+    private Fach[] faecher;
+    private int anzahlFaecher;
   /* Methoden */
   /** @param erstelle neues Fach
 */
@@ -33,6 +33,14 @@ public class Verwaltung
   /** @param erstelle neue Note
 */
   public void legeNoteAn(Fach  fach,int  wert,boolean  schriftlich){
+      if(schriftlich==true)
+      {
+          fach.legeSchriftlicheNoteAn(wert);
+      }
+      else
+      {
+          fach.legeMuendlicheNoteAn(wert);
+      }
   }
 
   /** @return liefert anzahlFaecher 
