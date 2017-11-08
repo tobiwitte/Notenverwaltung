@@ -41,7 +41,7 @@ public class Fach
     /** @return liefert name 
      */
     public String gibName(){
-        //TODO gegebenenfalls ueberarbeiten
+        
         return this.name;
     }
 
