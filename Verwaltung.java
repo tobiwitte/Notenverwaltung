@@ -5,17 +5,48 @@ public class Verwaltung
 {
     /* Attribute */
     private Fach[] faecher = new Fach[12];
-    private int anzahlFaecher = 0;
     /* Methoden */
     /** @param erstelle neues Fach
      */
     public void legeFachAn(String  name){
-        if(anzahlFaecher <= faecher.length){
-            faecher[anzahlFaecher] = new Fach(name);
-            anzahlFaecher++;
+        if(name != null)
+        {
+            int index = 0;
+            while(index < faecher.length)
+            {
+                if(faecher[index] == null)
+                {
+                    faecher[index] = new Fach(name);
+                    break;
+                }
+                else
+                {
+                    index++;
+                }
+            }
         }
-        else {
-            System.out.println("Das Maximum von 12 Fächern ist erreicht!");
+    }
+
+    public void fuegeFachHinzu(Fach fach){
+        if(fach != null)
+        {
+            int index = 0;
+            while(index < faecher.length)
+            {
+                if(faecher[index] == null)
+                {
+                    faecher[index] = fach;
+                    break;
+                }
+                else
+                {
+                    index++;
+                    if(index==12){
+                        System.out.println("Es können maximal 12 Fächer angelegt werden!");
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -23,9 +54,8 @@ public class Verwaltung
      */
     public void gibFaecherNamen(){
         for(int i=0; i<faecher.length; i++){
-            String name = faecher[i].gibName();
-            if(name != null){
-                System.out.println(name);
+            if(faecher[i] != null){
+                System.out.println(faecher[i].gibName());
             }
         }
     }
@@ -52,8 +82,15 @@ public class Verwaltung
     /** @return liefert anzahlFaecher 
      */
     public int gibAnzahlFaecher(){
-        //TODO gegebenenfalls ueberarbeiten
-        return this.anzahlFaecher;
+        int summe = 0;
+        for(int i = 0; i < faecher.length;i++)
+        {
+            if(faecher[i] != null)
+            {
+                summe++;
+            }
+        }
+        return summe;
     }
 
     /** @param erstelle neues Notenziel

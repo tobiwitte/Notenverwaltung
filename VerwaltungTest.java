@@ -52,9 +52,12 @@ public class VerwaltungTest
         Verwaltung v = new Verwaltung();
         for(int i=0;i<13;i++){
             String name = "Testfach" + i;
-            
-        v.legeFachAn("Testfach");
-        System.out.println("Pos. 0: "+v.gibFachAnStelle(0));
+            v.legeFachAn(name);
+        }
+        Fach fach = new Fach("Testfach x");
+        v.fuegeFachHinzu(fach);
+        System.out.println("Pos. 11 \t:\t neu erzeugtes Fach");
+        System.out.println(v.gibFachAnStelle(11)+"\t:\t "+ fach);
     }
 }
 
