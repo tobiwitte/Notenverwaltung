@@ -1,14 +1,14 @@
 /**
-*
-*/
+ *
+ */
 public class muendlicheNote extends Note 
 {
-  /* Konstruktoren */
-  /**  */
-  public muendlicheNote(int  note){
-    super(note);
-  }
+    /* Konstruktoren */
+    /**  */
+    public muendlicheNote(int  note){
+        super(note);
+    }
 
-  /* Methoden */
+    /* Methoden */
 }//Ende Klasse: muendlicheNote
 

@@ -1,14 +1,14 @@
 /**
-*
-*/
+ *
+ */
 public class schriftlicheNote extends Note 
 {
-  /* Konstruktoren */
-  /**  */
-  public schriftlicheNote(int  note){
-    super(note);
-  }
+    /* Konstruktoren */
+    /**  */
+    public schriftlicheNote(int  note){
+        super(note);
+    }
 
-  /* Methoden */
+    /* Methoden */
 }//Ende Klasse: schriftlicheNote
 
