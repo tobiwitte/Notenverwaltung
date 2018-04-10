@@ -22,6 +22,10 @@ public class Verwaltung
                 else
                 {
                     index++;
+                    if(index==12){
+                        System.out.println("Es können maximal 12 Fächer angelegt werden!");
+                        break;
+                    }
                 }
             }
         }
@@ -59,16 +63,10 @@ public class Verwaltung
             }
         }
     }
-
-    /** @return liefert fach
-     */
-    public Fach gibFach(Fach  fach){
-        return new Fach("Test");
-    }
-
+    
     /** @param erstelle neue Note
      */
-    public void legeNoteAn(Fach  fach,int  wert,boolean  schriftlich){
+    public void legeNoteAn(Fach  fach, int  wert, boolean  schriftlich){
         if(schriftlich==true)
         {
             fach.legeSchriftlicheNoteAn(wert);

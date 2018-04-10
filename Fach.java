@@ -28,28 +28,30 @@ public class Fach
         return sum/noten.length;
     }
 
-    /** @return liefert die aktuelle Tendenz zurück
+    /** 
+     * @return liefert die aktuelle Tendenz zurück
      */
     public int gibAktuelleTendenz(){
-        return 0;
+        return noten[anzahlNoten].gibNote() - noten[anzahlNoten-1].gibNote();
     }
 
     /** @param  muendliche Note
      */
     public void legeMuendlicheNoteAn(int  note){
        noten[anzahlNoten] = new muendlicheNote(note);
+       anzahlNoten++;
     }
     
     /** @param schriftliche Note 
      */
     public void legeSchriftlicheNoteAn(int  note){
         noten[anzahlNoten] = new schriftlicheNote(note);
+        anzahlNoten++;
     }
 
     /** @return liefert name 
      */
     public String gibName(){
-        
         return this.name;
     }
 
@@ -71,10 +73,7 @@ public class Fach
      * Notenziel und aktuellem Notendurchschnitt
      */
     public int gibDifferenz(){
-        return 0;
+        return notenziel-this.gibNotendurchschnitt();
     }
-
-    
-
 }//Ende Klasse: Fach
 
