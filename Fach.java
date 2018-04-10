@@ -6,8 +6,7 @@ public class Fach
     /* Attribute */
     private final String name;
     private int notenziel;
-    private Note[] noten;
-    private int anzahlNoten;
+    private List<Note> noten;
     /* Konstruktoren */
     /**
      * Konstruktor für die Klasse Fach
@@ -22,31 +21,32 @@ public class Fach
      */
     public int gibNotendurchschnitt(){
         int sum = 0;
-        for(int i=0; i<noten.length; i++){
-            sum += noten[i].gibNote();
+        noten.toFirst();
+        while(noten.hasAccess()){
+            sum += noten.getContent().gibNote();
+            noten.next();
         }
-        return sum/noten.length;
+        return sum/noten.getLength();
     }
 
     /** 
      * @return liefert die aktuelle Tendenz zurück
      */
     public int gibAktuelleTendenz(){
-        return noten[anzahlNoten].gibNote() - noten[anzahlNoten-1].gibNote();
+        // return noten[anzahlNoten].gibNote() - noten[anzahlNoten-1].gibNote();
+        return 0;
     }
 
     /** @param  muendliche Note
      */
     public void legeMuendlicheNoteAn(int  note){
-       noten[anzahlNoten] = new muendlicheNote(note);
-       anzahlNoten++;
+        noten.append(new muendlicheNote(note));
     }
-    
+
     /** @param schriftliche Note 
      */
     public void legeSchriftlicheNoteAn(int  note){
-        noten[anzahlNoten] = new schriftlicheNote(note);
-        anzahlNoten++;
+        noten.append(new schriftlicheNote(note));
     }
 
     /** @return liefert name 
